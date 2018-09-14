@@ -8,6 +8,10 @@ module.exports = function(app) {
     res.render("login");
   });
 
+  app.get("/rewards", function (req, res) {
+    res.render("rewards");
+  });
+
   // cms route loads cms.html
   app.get("/cms", function (req, res) {
     res.render("cms");
