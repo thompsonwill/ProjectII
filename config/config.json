@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "bluePEN456",
+    "password": "password",
     "database": "employee_db",
     "host": "127.0.0.1",
     "port": 3306,
