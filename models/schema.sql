@@ -1,5 +1,13 @@
+
 DROP DATABASE IF EXISTS employee_db;
 CREATE DATABASE employee_db;
 
 DROP DATABASE IF EXISTS catgeory_db;
 CREATE DATABASE category_db;
+
+DROP DATABASE IF EXISTS exampledb;
+CREATE DATABASE exampledb;
+
+DROP DATABASE IF EXISTS testdb;
+CREATE DATABASE testdb;
+
