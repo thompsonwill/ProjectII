@@ -1,0 +1,127 @@
+<h4>We value your feedback and want to create
+    a more meaningful workplace for you!</h4>
+<h5>Please take 2-3 minutes to answers the questions below.</h5>
+
+<br>
+
+<form action="/action_page.php">
+
+    <ol>
+        <li>Performance: I receive regular feedback on my performance and the coaching 
+            I receive helps me improve my skills and contributions to the organization.
+           <br>
+            <form action="#">
+                <p>
+                    <label>
+                        <input name="group1" type="radio" checked />
+                        <span>Strongly Disagree</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="group1" type="radio" />
+                        <span>Disagree</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input class="with-gap" name="group1" type="radio" />
+                        <span>Neither Agree nor Disagree</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="group1" type="radio" disabled="disabled" />
+                        <span>Agree</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="group1" type="radio" checked />
+                        <span>Strongly Agree</span>
+                    </label>
+                </p>
+        
+
+        <br>
+        <li>Culture: I believe our organization promotes the professional growth and
+            development of its employees.
+            <form action="#"></form>
+                <p>
+                    <label>
+                        <input name="group1" type="radio" checked />
+                        <span>Strongly Disagree</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="group1" type="radio" />
+                        <span>Disagree</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input class="with-gap" name="group1" type="radio" />
+                        <span>Neither Agree nor Disagree</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="group1" type="radio" disabled="disabled" />
+                        <span>Agree</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="group1" type="radio" checked />
+                        <span>Strongly Agree</span>
+                    </label>
+                </p>
+            </form>
+
+        <br>
+        <li>Activity: Please pick this month's activity of choice on the dropdown!</li>
+        <br>
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Activity Choices</a>
+       
+        <br>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">Office Obstacle Course</a></li>
+            <li><a href="#!">Wine Tasting</a></li>
+            <li><a href="#!">Basketball Tournament and Pizza Party</a></li>
+            <li><a href="#!">Escape Room</a></li>
+
+        </ul>
+
+        </div>
+        <br>
+
+        <input type="submit" value="Submit">
+    </ol>
+</form>
+
+<p>Click the "Submit" button and the form-data will be sent to a page 
+    on the server called "/action_page.php".</p>
+
+{{!-- <script type="text/javascript">
+Event.observe(window, 'load', function(){
+var newName = 'Submit';
+if ($('NextButton').nodeName == 'INPUT')
+{
+ $('NextButton').setValue(newName);
+}
+else if ($('NextButtonText').nodeName == 'SPAN')
+{
+ $('NextButtonText').innerHTML = newName;
+}
+else // next button is probably a button
+{
+ $('NextButton').innerHTML = newName;
+}
+});
+</script> --}}
+
+</body>
+
+</html>
