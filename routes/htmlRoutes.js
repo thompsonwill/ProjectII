@@ -8,6 +8,11 @@ module.exports = function(app) {
     res.render("login");
   });
 
+  app.get("/survey", function (req, res) {
+    res.render("login");
+  });
+
+
   app.get("/rewards", function (req, res) {
     res.render("rewards");
   });
