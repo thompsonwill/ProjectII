@@ -12,6 +12,11 @@ module.exports = function(app) {
     res.render("rewards");
   });
 
+
+  app.get("/dash", function (req, res) {
+    res.render("dashboard");
+  });
+
   // cms route loads cms.html
   app.get("/cms", function (req, res) {
     res.render("cms");
