@@ -12,6 +12,7 @@ module.exports = function(app) {
     res.render("rewards");
   });
 
+
   app.get("/dash", function (req, res) {
     res.render("dashboard");
   });
