@@ -1,4 +1,5 @@
 var db = require("../models");
+var request = require("request");
 
 module.exports = function(app) {
   // Get all examples
@@ -6,6 +7,20 @@ module.exports = function(app) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.json(dbExamples);
     });
+  });
+  app.get("/api/rewards", function(req, res) {
+    res.send("Groupon Data");
+    
+    $.ajax({
+      url: "https://api.discountapi.com/v2/deals?api_key=mAzPLCrk",
+      type: "GET",
+      data: {
+        "$limit" : 1000,
+      }
+      }).done(function(data) {
+        alert("Retrieved " + data.length + " records from the dataset!");
+          console.log(data);
+      });    
   });
 
   // Create a new example
