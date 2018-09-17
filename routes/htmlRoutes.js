@@ -9,7 +9,7 @@ module.exports = function(app) {
   });
 
   app.get("/survey", function (req, res) {
-    res.render("login");
+    res.render("survey");
   });
 
 
