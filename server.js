@@ -28,6 +28,7 @@ require("./routes/employee-apiRoutes.js")(app);
 require("./routes/htmlRoutes.js")(app);
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+require("./routes/survey-routes.js")(app)
 
 var syncOptions = { force: false };
 

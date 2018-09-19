@@ -37,3 +37,8 @@ module.exports = function(app) {
     });
   });
 };
+
+
+// get and post routes to server
+
+master branch resource - suggestion box

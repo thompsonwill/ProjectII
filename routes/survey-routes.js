@@ -2,16 +2,20 @@ var express = require("express");
 
 var router = express.Router();
 
+var survey = require("../models"); {
+    module.exports = function (app) {
+        app.post("/survey", function (req, res) {
+            db.survey.create({
+                    group1: req.body.group1,
+                    group2: req.body.group2,
+                    group3: req.body.group3
+                })
+                .then(function (dbPost) {
+                    res.json(dbPost);
+                });
+        });
 
-var surveyInput = require("../models/survey.js");
 
-router.post("/", function(req, res) {
-    answers.create([
-      "question1", "question2", "quesitons3" 
-    ], [
-      req.body.surveyResponses, req.body.answers
-    ], function() {
-      res.redirect("/");
-    });
-  });
+    }
 
+}
