@@ -8,19 +8,8 @@ module.exports = function(app) {
       res.json(dbExamples);
     });
   });
-  app.get("/api/rewards", function(req, res) {
-    res.send("Groupon Data");
-    
-    $.ajax({
-      url: "https://api.discountapi.com/v2/deals?api_key=mAzPLCrk",
-      type: "GET",
-      data: {
-        "$limit" : 1000,
-      }
-      }).done(function(data) {
-        alert("Retrieved " + data.length + " records from the dataset!");
-          console.log(data);
-      });    
+  app.get("/rewards", function(req, res) {
+      
   });
 
   // Create a new example
