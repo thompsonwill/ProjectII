@@ -76,9 +76,8 @@ require("./routes/category-apiRoutes.js")(app);
 require("./routes/employee-apiRoutes.js")(app);
 require("./routes/htmlRoutes.js")(app, passport);
 require("./routes/apiRoutes")(app);
+require("./routes/suggestion-apiRoutes.js")(app);
 require("./routes/htmlRoutes")(app, passport);
-
-
 
 
 var syncOptions = { force: false };
