@@ -1,11 +1,13 @@
 // Example queryURL for Giphy API
-var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
+var queryURL = "https://api.discountapi.com/v2/deals?api_key=mAzPLCrk";
 $.ajax({
   url: queryURL,
   method: "GET"
-}).then(function(response) {
-    for (i = 0; i < response.length; i++) {
-        $("#deal-view").append("<h1> Title: " + response[i] +"</h1>");
-    }
-    // $("#deal-view").text(JSON.stringify(response));
+}).then(function (response) {
+  console.log(response.deals);
+  for (let i = 0; i < response.deals.length; i++) {
+    // Print each iteration to the console
+    console.log(response.deals[i].deal.title);
+    $('#deal-view').append(response.deals[i].deal.title + "<br>");
+  }
 });
