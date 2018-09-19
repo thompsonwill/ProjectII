@@ -72,9 +72,9 @@ module.exports = function (app, passport) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
-    res.render("404", { layout: false });
-  });
+  // app.get("*", function (req, res) {
+  //   res.render("404", { layout: false });
+  // });
 
 
 };

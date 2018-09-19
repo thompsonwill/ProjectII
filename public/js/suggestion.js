@@ -1,38 +1,52 @@
-// When user clicks add-btn
-$("#suggestion-submit").on("click", function (event) {
+$(document).ready(function() {
+  // When user clicks add-btn
+    $("#suggestion-submit").on("click", function(event) {
     event.preventDefault();
 
-    var newSuggestion = {
-        employee: $("#employee").val().trim(),
-        body: $("#suggestion-box").val().trim(),
+      var newSuggestion = {
+        employee: $("#employee")
+        .val()
+        .trim(),
+      body: $("#suggestion-box").val().trim(),
         created_at: moment().format("YYYY-MM-DD HH:mm:ss")
-    };
-    console.log(newSuggestion);
-    // Send an AJAX POST-request with jQuery
-    $.post("/api/new", newSuggestion)
-        // On success, run the following code
-        .then(function () {
-            var row = $("<div>");
-            row.addClass("suggestion");
-            row.append("<p>" + newSuggestion.employee + " suggested: </p>");
-            row.append("<p>" + newSuggestion.body + "</p>");
-            row.append("<p>At " + moment(newSuggestion.created_at).format("h:mma on dddd") + "</p>");
-            $("#suggestion-area").prepend(row);
-        });
-    // Empty each input box by replacing the value with an empty string
-    // $("#employee").val("");
-    $("#suggestion").val("");
-});
+      };
 
-$.get("/api/all", function (data) {
-    if (data.length !== 0) {
-        for (var i = 0; i < data.length; i++) {
-            var row = $("<div>");
+      console.log("THIS IS YOUR NEW SUGGESTION " + newSuggestion.body);
+
+      // Send an AJAX POST-request with jQuery
+      $.post("/api/all", newSuggestion)
+        // On success, run the following code
+        .then(function() {
+          var row = $("<div>");
+          row.addClass("suggestion");
+          row.append("<p>" + newSuggestion.employee + " suggested: </p>");
+          row.append("<p>" + newSuggestion.body + "</p>");
+              row.append("<p>At " + moment(newSuggestion.created_at).format("h:mma on dddd") + "</p>");
+        $("#suggestion-area").prepend(row);
+        });
+      // Empty each input box by replacing the value with an empty string
+    // $("#employee").val("");
+      $("#suggestion-box").val("");
+    });
+
+  function getSuggestions() {
+    $.get("/api/all", function(results) {
+        if (results.length !== 0) {
+          for (var i = 0; i < results.length; i++) {
+          var row = $("<div>");
             row.addClass("suggestion");
-            row.append("<p>" + data[i].employee + " suggested.. </p>");
-            row.append("<p>" + data[i].body + "</p>");
-            row.append("<p>At " + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
+            row.append("<p><b>" + results[i].employee + "</b> suggested.. </p>");
+          row.append("<p>" + results[i].body + "</p>");
+            row.append(
+            "<p>At " +
+              moment(results[i].created_at).format("h:mma on dddd") +
+              "</p>"
+          );
             $("#suggestion-area").prepend(row);
-        }
+          }
+      }
+      });
     }
+
+    getSuggestions();
 });
