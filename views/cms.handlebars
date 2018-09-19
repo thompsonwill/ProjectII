@@ -23,17 +23,25 @@
                         <br />
 
                         <label for="suggestion">Suggestion:</label>
-                        <textarea placeholder="Enter Suggestion Here" class="form-control" rows="10" id="suggestion"></textarea>
+                        <textarea placeholder="Enter Suggestion Here" class="form-control" rows="10" id="suggestion-box"></textarea>
 
                         <br />
-                        <button type="submit" class="btn btn-success submit">Submit</button>
+                        <button type="suggestion-submit" class="btn btn-success submit">Submit</button>
                     </div>
                 </form>
+
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <h4>Suggestions:</h4>
+                        <hr>
+                        <div id="suggestion-area"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- Custom Script -->
-    <script src="js/cms.js" type="text/javascript"></script>
+    <script src="/public/js/suggestion.js" type="text/javascript"></script>
 
 </body>
 
