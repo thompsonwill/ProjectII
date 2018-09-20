@@ -41,4 +41,22 @@ module.exports = function(app) {
 
 // get and post routes to server
 
-master branch resource - suggestion box
+
+app.get("/api/survey", function(req, res) {
+  db.survey.findAll({}).then(function(newSurvey) {
+    // results are available to us inside the .then
+    res.json(newSurvey);
+  });
+});
+
+app.post("/api/survey", function(req, res) {
+  console.log("New Survey");
+  console.log(req.body);
+  db.newSurvey.create({
+    group1: req.body.group1,
+    group2: req.body.group2,
+    group3: req.body.group3
+  }).then(function(newSurvey) {
+    res.end();
+  });
+});

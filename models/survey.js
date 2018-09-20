@@ -7,5 +7,3 @@ module.exports = function(sequelize, DataTypes) {
 
     return survey;
   };
-
-//  don't need to return since post to database only?
