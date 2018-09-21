@@ -41,6 +41,12 @@ module.exports = function (app, passport) {
       res.render('dashboard', { user: req.user, title: "Dashboard" });
     });
 
+    app.get('/thanks',
+    require('connect-ensure-login').ensureLoggedIn(),
+    function (req, res) {
+      res.render('thanks', { user: req.user, title: "Thank you!" });
+    });
+
 
 
   app.get('/cms',
