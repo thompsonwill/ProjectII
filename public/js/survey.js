@@ -27,8 +27,10 @@ $(document).ready(function () {
         $.post("api/survey", newSurvey)
             .then(function () {
                 console.log(newSurvey)
-
+            
+              
             })
+            document.write("Thank you for your submission!")
         })
    
 })
