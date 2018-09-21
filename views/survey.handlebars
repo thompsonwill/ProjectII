@@ -1,3 +1,19 @@
+
+<script src="/js/survey.js"></script>
+
+
+<h4>We value your feedback and want to create
+    a more meaningful workplace for you!</h4>
+<h5>Please take a minute to answers the questions below.</h5>
+<br>
+
+<form class="create-form">
+
+    <ol>
+        <li>Performance: I receive regular feedback on my performance and the coaching
+            I receive helps me improve my skills and contributions to the organization.
+            <br>
+            <form action="#" class="surveyForm">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <div class="container">
     <h4>{{title}}</h4>
@@ -14,121 +30,110 @@
             and contributions to the organization.
             <br>
             <form action="#">
+
                 <p>
                     <label>
-                        <input name="group1" type="radio" checked />
+                        <input name="group1" type="radio" value="0" />
                         <span>Strongly Disagree</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input name="group1" type="radio" />
+                        <input name="group1" type="radio" value="1" />
                         <span>Disagree</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input class="with-gap" name="group1" type="radio" />
+                        <input name="group1" type="radio" value="2" />
                         <span>Neither Agree nor Disagree</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input name="group1" type="radio" disabled="disabled" />
+                        <input name="group1" type="radio" value="3" />
                         <span>Agree</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input name="group1" type="radio" checked />
+                        <input name="group1" type="radio" value="4" />
                         <span>Strongly Agree</span>
                     </label>
                 </p>
 
 
                 <br>
-                <li>Culture: I believe our organization promotes the professional growth and development of its employees.
-                    <form action="#"></form>
-                    <p>
-                        <label>
-                            <input name="group1" type="radio" checked />
-                            <span>Strongly Disagree</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input name="group1" type="radio" />
-                            <span>Disagree</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input class="with-gap" name="group1" type="radio" />
-                            <span>Neither Agree nor Disagree</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input name="group1" type="radio" disabled="disabled" />
-                            <span>Agree</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input name="group1" type="radio" checked />
-                            <span>Strongly Agree</span>
-                        </label>
-                    </p>
-            </form>
+        <li>Culture: I believe our organization promotes the professional growth and
+            development of its employees.
+
+            <p>
+                <label>
+                    <input name="group2" type="radio" value="5" />
+                    <span>Strongly Disagree</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="group2" type="radio" value="6" />
+                    <span>Disagree</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="group2" type="radio" value="7" />
+                    <span>Neither Agree nor Disagree</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="group2" type="radio" value="8" />
+                    <span>Agree</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="group2" type="radio" value="9" />
+                    <span>Strongly Agree</span>
+                </label>
+            </p>
 
             <br>
-            <li>Activity: Please pick this month's activity of choice on the dropdown!</li>
-            <br>
-            <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Activity Choices</a>
+        <li>Activity: Please pick your preferred activity for this month!</li>
+        <p>
 
-            <br>
-            <!-- Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="#!">Office Obstacle Course</a></li>
-                <li><a href="#!">Wine Tasting</a></li>
-                <li><a href="#!">Basketball Tournament and Pizza Party</a></li>
-                <li><a href="#!">Escape Room</a></li>
+            <label>
+                <input name="group3" type="radio" value="10" />
+                <span>Office Obstacle Course</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="group3" type="radio" value="11" />
+                <span>Wine Tasting</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="group3" type="radio" value="12" />
+                <span>Basketball Tournament and Pizza Party</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="group3" type="radio" value="13" />
+                <span>Escape Room</span>
+            </label>
+        </p>
+        <button type="submit" class="engagement">submit</button>
+        {{!-- value="Submit" --}}
 
-            </ul>
-
-            </div>
-            <br>
-
-            <input type="submit" value="Submit">
     </ol>
 </form>
 
-</div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, options);
-  });
-  </script>
-
- {{!--
-<script type="text/javascript">
-    Event.observe(window, 'load', function () {
-        var newName = 'Submit';
-        if ($('NextButton').nodeName == 'INPUT') {
-            $('NextButton').setValue(newName);
-        }
-        else if ($('NextButtonText').nodeName == 'SPAN') {
-            $('NextButtonText').innerHTML = newName;
-        }
-        else // next button is probably a button
-        {
-            $('NextButton').innerHTML = newName;
-        }
-    });
-</script> --}}
-
+                <br>
+               
 </body>
 
 </html>
