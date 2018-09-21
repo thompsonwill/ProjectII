@@ -6,11 +6,13 @@
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/styles/jsCalendar.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
   <script type="text/javascript" src="/js/jsCalendar.js"></script>
-  {{!-- <script type="text/javascript" src="/js/rewards.js"></script> --}}
- {{!-- <script type="text/javascript" src="../../public/js/rewards.js"></script> --}}
+  {{!-- <script type="text/javascript" src="../public/js/rewards.js"></script> --}}
+
   <title>Home Page</title>
 </head>
 
@@ -30,6 +32,9 @@
       <li>
         <a href="/rewards" class="rew">Rewards</a>
       </li>
+       {{!-- <li>
+        <a href="/rewards.html" class="rew">Rewards</a>
+      </li> --}}
       <li>
         <a href="#">Logout</a>
       </li>
@@ -38,12 +43,24 @@
 </nav>
 
 
-
-
-
 <body>
   {{{body}}}
+
+{{!-- <script> 
+$.ajax({
+  url: "https://api.discountapi.com/v2/deals?api_key=mAzPLCrk",
+  type: "GET",
+  data: {
+    $limit: 1000
+  }
+}).done(function(data) {
+  alert("Retrieved " + data.deals.length + " deals from the dataset!");
+  console.log(data.deals[0]);
+  for (i = 0; i < data.deals.length; i++) {
+    $("#deal-view").append("<h1> Title: " + data.deals.deal.title[i] + "</h1>");
+  }
+  $("#deal-view").text(JSON.stringify(data));
+});
+</script> --}}
 </body>
-
-
 </html>
