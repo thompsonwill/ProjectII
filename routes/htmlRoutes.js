@@ -22,6 +22,10 @@ module.exports = function (app, passport) {
       res.render('survey', { user: req.user, title: "Weekly Survey" });
     });
 
+    app.get('/login', function (req, res) {
+      res.render('login', {layout: false});
+    });
+
 
   app.get('/rewards',
     require('connect-ensure-login').ensureLoggedIn(),
