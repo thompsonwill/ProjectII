@@ -23,11 +23,13 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/category-apiRoutes.js")(app);
-require("./routes/employee-apiRoutes.js")(app);
-require("./routes/htmlRoutes.js")(app);
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/category-apiRoutes.js")(app, passport);
+require("./routes/employee-apiRoutes.js")(app, passport);
+require("./routes/htmlRoutes.js")(app, passport);
+require("./routes/apiRoutes")(app, passport);
+require("./routes/htmlRoutes")(app, passport);
+require("./routes/survey-routes.js")(app, passport);
+require("./routes/suggestion-apiRoutes.js")(app, passport);
 
 var syncOptions = { force: false };
 

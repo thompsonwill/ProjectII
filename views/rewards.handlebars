@@ -75,14 +75,23 @@
     <div id="deal-view">
 
     </div>
+<div class="JSON">
+{{apiData}}
+</div>
 
-<div class="itemTemplateWrapper">
+<ul>
+{{#each apiData}}
+<li>{{this.deal.title}}</li>
+{{/each}}
+</ul>
+
+{{!-- <div class="itemTemplateWrapper">
     <div><span>Deal: </span><span>{{data.deals.deal}}</span></div>
     <div><span>Description: </span><span>{{description}}</span></div>
     <div><span>Image: </span><span>{{img}}</span></div>
     <div><span>Price: </span><span>{{price}}</span></div>
 
-</div>
+</div> --}}
 
     <br>
     <p id="submission"><input class="Rbutton" type="button" value="Refresh" onClick="window.location.href=window.location.href">
