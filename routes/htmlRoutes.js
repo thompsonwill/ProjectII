@@ -50,6 +50,12 @@ module.exports = function (app, passport) {
       res.render('cms', { user: req.user, title: "Suggestion Box" });
     });
 
+    app.get('/thanks',
+    require('connect-ensure-login').ensureLoggedIn(),
+    function (req, res) {
+      res.render('thanks', { user: req.user, title: "Thank you!" });
+    });
+
   // blog route loads blog.html
   app.get("/categories", function (req, res) {
     res.render("category-manager");

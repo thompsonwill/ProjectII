@@ -30,7 +30,7 @@ $(document).ready(function () {
             
               
             })
-            document.write("Thank you for your submission!")
+            window.location = "/thanks";
         })
    
 })
