@@ -2,6 +2,7 @@ var db = require("../models");
 var request = require("request");
 
 module.exports = function (app) {
+
   // Get all examples
   app.get("/api/examples", function (req, res) {
     db.Example.findAll({}).then(function (dbExamples) {
@@ -17,7 +18,7 @@ module.exports = function (app) {
       data: {
         "$limit": 1000,
       }
-    }).done(function (data) {
+    }).done(function(data) {
       alert("Retrieved " + data.length + " records from the dataset!");
       console.log(data);
     });
@@ -31,12 +32,12 @@ module.exports = function (app) {
   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function (req, res) {
-    db.Example.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function (dbExample) {
+
+  app.delete("/api/examples/:id", function(req, res) {
+    db.Example.destroy({ where: { id: req.params.id } }).then(function(
+      dbExample
+    ) {
+
       res.json(dbExample);
     });
   });
