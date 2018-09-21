@@ -5,3 +5,18 @@
 .card {
   margin-top: 30px;
 }
+
+.auto-jsCalendar{
+  border: none;
+}
+
+table {border: none;}
+.auto-jsCalendar {
+  float: left;
+  padding-top: 20px;
+}
+
+.content {
+  float: left;
+  padding-left: 50px;
+}
