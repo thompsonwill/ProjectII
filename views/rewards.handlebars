@@ -1,49 +1,166 @@
 
 <div class="container">
-    <h1>Employee Rewards</h1>
-</div>
+     <h4>{{title}}</h4>
+
 
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EEP Rewards</title>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+
+<body>
+    <div class="container" style="background-color: rgb(231, 231, 231);">
+        <div class="jumbotron jumbotron-fluid p-0 mb-0 rounded" style="background-color: rgb(231, 231, 231)">
+            <div class="container text-center" style=" background-color: rgb(231, 231, 231) ">
+                <h1 class="display-4 p-3">Welcome to EEP Rewards</h1>
+            </div>
+        </div>
+    </div>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="1000">
 
 <div class="container">
+   
         <div id="deal-view"></div>
 </div>
       
 
     <div id="carouselExampleSlidesOnly" class="carousel" data-ride="carousel">
         <div class="carousel-inner mb-0">
+
             <div class="carousel-item active">
-                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="assets/employee-perks-survey_og.png" alt="First slide">
+                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="./assets/employee-perks-survey_og.png" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="assets/Unique-employee-perks-that-will-take-your-startup-to-another-level-open-graph-980x512.png"
+                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="./assets/Unique-employee-perks-that-will-take-your-startup-to-another-level-open-graph-980x512.png"
                     alt="Second slide">
             </div>
             <div class="carousel-item">
-                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="assets/download2.png" alt="Third slide">
+                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="./assets/download2.png" alt="Third slide">
             </div>
             <div class="carousel-item">
-                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="assets/download.jpg"
+                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="./assets/download.jpg"
                     alt="Fourth slide">
             </div>
             <div class="carousel-item">
-                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="assets/ideas.png" alt="Fifth slide">
+                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="./assets/ideas.png" alt="Fifth slide">
             </div>
             <div class="carousel-item">
-                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="assets/the-missing-link-between-employee-wellness_1_orig.jpg" alt="Sixth slide">
+                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="./assets/the-missing-link-between-employee-wellness_1_orig.jpg" alt="Sixth slide">
             </div>
             <div class="carousel-item">
-                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="assets/Reward-Your-Employees.jpg"
+                <img class="mx-auto d-block w-100 shadow-lg p-3 mb-5 bg-white rounded" src="./assets/Reward-Your-Employees.jpg"
                     alt="Seventh slide">
             </div>
-
         </div>
+
+            
+        <div class="container text-center mx-auto d-block w-100 shadow-lg p-3  bg-white rounded mt-3" id="push-data">               
+            <div class="container popup-container">
+                <div class="space-90"></div>
+                <form method="POST">
+                    <div class="form-row align-items-center">
+                    <div class="col-md-3">
+                        <label class="sr-only" for="inlineFormInput">Search Rewards</label>
+                        <input type="text" class="form-control mb-2" id="inlineFormInput" name="searchTerm" placeholder="Search Rewards" value="">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="sr-only" for="inlineFormInput">Location</label>
+                        <input type="text" class="form-control mb-2" id="inlineFormInput" name="location" placeholder="Location (e.g. 'IP', 'San Francisco, CA', '1.2.3.4')" value="San Francisco, CA">
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary mb-2">Search</button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="container2">
+            <h2>Here are your Rewards:</h2>
+        </div>
+    
+    <div id="deal-view">
+
+    </div>
+<div class="JSON">
+{{apiData}}
+</div>
+
+<ul>
+{{#each apiData}}
+<li>{{this.deal.title}}</li>
+{{/each}}
+</ul>
+
+{{!-- <div class="itemTemplateWrapper">
+    <div><span>Deal: </span><span>{{data.deals.deal}}</span></div>
+    <div><span>Description: </span><span>{{description}}</span></div>
+    <div><span>Image: </span><span>{{img}}</span></div>
+    <div><span>Price: </span><span>{{price}}</span></div>
+
+</div> --}}
+
+    <br>
+    <p id="submission"><input class="Rbutton" type="button" value="Refresh" onClick="window.location.href=window.location.href">
+    <br>
+
+    <div class="card mx-auto" style="width: 1140px;" >
+        <div class="card-header text-center text-white-50 bg-dark rounded-0" >EEP</div>
+          
+    </div>
+    {{!-- <script src="../public/js/rewards.js"></script> --}}
+   
+</body>
+</div>
+</html>
+
+{{!-- //loop through each deal
+
+<ul>
+  {{#each cats}}
+    {{#unless sleepy}}
+      {{> cats/cat-block sleep=true}}
+    {{/unless}}
+  {{/each}}
+</ul> --}}
+
+
+ {{!-- <div class="col-md-3 margin-b-30" style="width:250px;height:250px;">
+            <a href="https://api.discountapi.com/v2/deals/739001/click?">
+                <img src="https://api.discountapi.com/v2/deals/739001/image?&amp;geometry=250x250C" alt="" class="img-fluid">
+                <div class="dealOverlay">
+                    <div class="dealOverlayText">
+                    <b>Haircut and Blow-Dry, or Hair-Smoothing Treatment with Optional Haircut at Your Moda Salon (Up to 68% Off)</b>
+                    </div>
+                </div>
+            </a>
+    </div> --}}
+
+{{!--
+    <div class="row">
+        <div class="col-md-3 margin-b-30" style="width:250px;height:250px;">
+            <a href="https://api.discountapi.com/v2/deals/739001/click?">
+                <img src="https://api.discountapi.com/v2/deals/739001/image?&amp;geometry=250x250C" alt="" class="img-fluid">
+                <div class="dealOverlay">
+                    <div class="dealOverlayText">
+                    <b>Haircut and Blow-Dry, or Hair-Smoothing Treatment with Optional Haircut at Your Moda Salon (Up to 68% Off)</b>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <div class="space-50"></div>
+</div> --}}
+
     </div>
 
-<script src="/js/rewards.js"></script>>
+<script src="/js/rewards.js"></script>
 
 

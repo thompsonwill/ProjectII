@@ -1,8 +1,10 @@
-    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
 <body>
     <div class="container">
+        <h4>{{title}}</h4>
         <div class="row top-30">
 
             <div class="col-md-2 col-sm-2">
@@ -14,9 +16,24 @@
                 <form id="cms">
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="employee">Select Employee:</label>
-                            <input class="text" id="employee">
-                            
+                            <label for="employee">Would you like your name attached to your suggestion?:</label>
+
+                            <form action="#" id="employee">
+                                <p>
+                                    <label>
+                                        <input name="group1" type="radio" value="{{user.username}}" id="username" />
+                                        <span>{{user.username}}</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input name="group1" type="radio" value="Anonymous" id="anonymous"/>
+                                        <span>Anonymous</span>
+                                    </label>
+                                </p>
+                            </form>
+
+
                         </div>
                         <label for="category">Category:</label>
                         <input class="text" id="catgeory">

@@ -1,5 +1,6 @@
 var db = require("../models");
 var path = require('path');
+var request = require("request");
 
 module.exports = function (app, passport) {
   // Load index page
@@ -19,14 +20,18 @@ module.exports = function (app, passport) {
   app.get('/survey',
     require('connect-ensure-login').ensureLoggedIn(),
     function (req, res) {
-      res.render('survey', { user: req.user });
+      res.render('survey', { user: req.user, title: "Weekly Survey" });
+    });
+
+    app.get('/login', function (req, res) {
+      res.render('login', {layout: false});
     });
 
 
   app.get('/rewards',
     require('connect-ensure-login').ensureLoggedIn(),
     function (req, res) {
-      res.render('rewards');
+      res.render('rewards', {title: "Employee Rewards"});
     });
 
 
@@ -34,7 +39,7 @@ module.exports = function (app, passport) {
   app.get('/dash',
     require('connect-ensure-login').ensureLoggedIn(),
     function (req, res) {
-      res.render('dashboard', { user: req.user });
+      res.render('dashboard', { user: req.user, title: "Dashboard" });
     });
 
 
@@ -42,7 +47,13 @@ module.exports = function (app, passport) {
   app.get('/cms',
     require('connect-ensure-login').ensureLoggedIn(),
     function (req, res) {
-      res.render('cms', { user: req.user });
+      res.render('cms', { user: req.user, title: "Suggestion Box" });
+    });
+
+    app.get('/thanks',
+    require('connect-ensure-login').ensureLoggedIn(),
+    function (req, res) {
+      res.render('thanks', { user: req.user, title: "Thank you!" });
     });
 
   // blog route loads blog.html
@@ -55,6 +66,7 @@ module.exports = function (app, passport) {
     res.render("employee-manager");
   });
 
+
   app.get('/logout',
     function (req, res) {
       req.logout();
@@ -62,19 +74,22 @@ module.exports = function (app, passport) {
     });
 
 
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
+    db.Example.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbExample) {
       res.render("example", {
         example: dbExample
       });
     });
   });
 
-  // Render 404 page for any unmatched routes
-  // app.get("*", function (req, res) {
-  //   res.render("404", { layout: false });
-  // });
+
+
 
 
 };

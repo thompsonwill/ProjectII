@@ -1,15 +1,15 @@
 {
   "development": {
-    "username": "root",
-    "password": "password",
-    "database": "employee_db",
-    "host": "127.0.0.1",
+    "username": "ng0vvuadarcdgb4b",
+    "password": "fjg301szl8ub57ow",
+    "database": "ffzts3tgww7jb54p",
+    "host": "m7nj9dclezfq7ax1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": 3306,
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "null",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",

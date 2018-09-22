@@ -50,8 +50,10 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Middleware
+
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());app.use(bodyParser.json());
+app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(require('morgan')('combined'));
 app.use(require('cookie-parser')());
@@ -72,15 +74,18 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/category-apiRoutes.js")(app);
-require("./routes/employee-apiRoutes.js")(app);
+require("./routes/category-apiRoutes.js")(app, passport);
+require("./routes/employee-apiRoutes.js")(app, passport);
 require("./routes/htmlRoutes.js")(app, passport);
 require("./routes/apiRoutes")(app, passport);
-require("./routes/suggestion-apiRoutes.js")(app, passport);
 require("./routes/htmlRoutes")(app, passport);
+require("./routes/survey-routes.js")(app, passport);
+require("./routes/suggestion-apiRoutes.js")(app, passport);
 
 
-var syncOptions = { force: false };
+var syncOptions = {
+  force: false
+};
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
