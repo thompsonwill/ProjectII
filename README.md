@@ -4,7 +4,7 @@ E.E.P is a way for employers with up to 50 employees get feedback from their tea
 
 In order to login, install the application and use one of the credentials below. They are stored in the users file in the /db/ directory.
 
-'''
+```
 var records = [
     {
     id: 1,
@@ -35,4 +35,4 @@ var records = [
     emails: [{ value: "misha@example.com" }]
   }
 ];
-'''
+```
