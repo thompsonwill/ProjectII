@@ -36,5 +36,4 @@ var records = [
   }
 ];
 ```
-
-[https://imgur.com/a/JTZLCEC]
+![screenshot](https://imgur.com/a/JTZLCEC)
