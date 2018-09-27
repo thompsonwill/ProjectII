@@ -1,38 +1,39 @@
-# Project Starter
+# E.E.P - The Employee Engagement Dashboard
 
-In this activity we will add the provided boilerplate to group project repos.
+E.E.P is a way for employers with up to 50 employees get feedback from their team. There are several sections: a dashboard with a calendar of company events, a suggestion box, a weekly survey, and rewards that act as employee incentives.
 
-## Instructions
+In order to login, install the application and use one of the credentials below. They are stored in the users file in the /db/ directory.
 
-* Only one member of each group should complete this activity while the others watch.
-
-* Copy the entire [Unsolved](Unsolved) folder to another location on your computers &mdash; wherever you would like your local copy of the group project to be.
-
-* Rename the copied "Unsolved" folder to the name of your project.
-
-* Open the copied project folder's `package.json` file and change its `name` property to the name of your project.
-
-* CD to the root of the copied project folder with your terminal and run the following commands:
-
-  ```
-  git init
-  git add .
-  git commit -m "Initial commit"
-  ```
-
-* Then copy the GitHub repo's remote SSH URL (the same URL you'd use to clone the repo).
-
-* Run the following commands in your terminal, replacing <remote-url> with your GitHub repo's remote SSH URL.
-
-  ```
-  git remote add origin <remote-url>
-  git push origin master
-  ```
-
-* If completed successfully you should see all of the files uploaded to GitHub.
-
-* All other group members should now clone the repo.
-
-* Discuss as a group:
-
-  * How would you now add changes to this project?
+```
+var records = [
+    {
+    id: 1,
+    username: "Will",
+    password: "password",
+    displayName: "Will",
+    emails: [{ value: "will@example.com" }]
+  },
+    {
+    id: 2,
+    username: "Duane",
+    password: "password123",
+    displayName: "Duane",
+    emails: [{ value: "duane@example.com" }]
+  },
+    {
+    id: 3,
+    username: "Julie",
+    password: "password456",
+    displayName: "Julie",
+    emails: [{ value: "julie@example.com" }]
+  },
+    {
+    id: 4,
+    username: "Misha",
+    password: "password789",
+    displayName: "Misha",
+    emails: [{ value: "misha@example.com" }]
+  }
+];
+```
+![screenshot](public/assets/eep.JPG)
