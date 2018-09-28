@@ -53,3 +53,8 @@ table {border: none;}
   width: 100%;
   text-align: center;
 }
+
+.deal-img{
+  height: 250px;
+  width: 250px;
+}
