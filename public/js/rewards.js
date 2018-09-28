@@ -35,11 +35,10 @@ $.ajax({
 
     // Print the title of each deal
     $('#deal-view').append(price);
-    $('#deal-view').append("<br/>");
 
     // Print url of each deal
     $('#deal-view').append(url);
-    $('#deal-view').append("<br/>");
+    $('#deal-view').append("<br/><br/>");
   }
 });
 
